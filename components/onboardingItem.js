@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center',
+        // backgroundColor: 'orange',
+        paddingBottom: '5%'
     },
     image: {
         flex: 0.8,
@@ -40,6 +42,6 @@ const styles = StyleSheet.create({
         color:'#000',
         fontSize: 15,
         textAlign: 'center',
-        paddingHorizontal: '20%'
+        paddingHorizontal: '20%',
     }
 })

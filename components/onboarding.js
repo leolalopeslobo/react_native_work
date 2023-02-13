@@ -69,14 +69,15 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         // backgroundColor:'green',
-        paddingVertical: '13%'
+        paddingVertical: '12%'
     },
     row: {
         flexDirection:'row',
+        // backgroundColor: 'green',
     },
     dot: {
-        width:10,
-        height:10,
+        width:8,
+        height:8,
         backgroundColor:'#D3D3D3',
         borderRadius:50,
         marginHorizontal:'0.8%',
