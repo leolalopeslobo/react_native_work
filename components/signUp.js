@@ -5,7 +5,7 @@ import CheckBox from "expo-checkbox";
 
 const {height, width} = Dimensions.get('window');
 
-export default function SignUp() {
+export default function SignUp({ navigation }) {
 
   // Checkbox Function
   const [isChecked, setIsChecked] = useState(false);
@@ -73,7 +73,7 @@ export default function SignUp() {
         <Text>Have an account already?</Text>
         <Text 
           // onPress={()=> someAction()}
-          // onPress={()=> navigation.navigate("Onboarding")}
+          onPress={()=> navigation.navigate("SignIn")}
           style={{color:'#EC5D70', marginLeft: '4%'}}>Sign In</Text>
       </View>
     </View>
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     // flex:1,
     // height: '100%',
     // backgroundColor:'pink',
+    backgroundColor: '#FFF',
     alignItems:'center',
     justifyContent: 'space-between',
     paddingVertical: '25%',

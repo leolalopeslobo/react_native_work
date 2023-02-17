@@ -5,7 +5,7 @@ import CheckBox from "expo-checkbox";
 
 const {height, width} = Dimensions.get('window');
 
-export default function SignInSA() {
+export default function SignInSA({ navigation }) {
 
   // Checkbox Function
   const [isChecked, setIsChecked] = useState(false);
@@ -42,13 +42,13 @@ export default function SignInSA() {
         </TouchableOpacity>
       <TouchableOpacity style={styles.signInButtonView}>
           <TouchableOpacity style={styles.signInButtonStyle}><Image style={{width: '8%', height: '100%'}} source={require('../assets/images/apple.png')}/><Text style={{color:'#000', marginLeft: '6%'}}>Apple</Text></TouchableOpacity>
-        </TouchableOpacity>
+      </TouchableOpacity>
         <Text style={{fontWeight: '600'}}>Or</Text>
       {/* SIGNIN BUTTON */}
       <View style={styles.onboardButton}>
-        <TouchableOpacity style={styles.onboardbuttonStyle}><Text style={{color:'#fff', fontWeight: '500'}}>Login with Password</Text></TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate("SignIn")} style={styles.onboardbuttonStyle}><Text style={{color:'#fff', fontWeight: '500'}}>Login with Password</Text></TouchableOpacity>
       </View>
-      <Text style={{color: '#4B4B4B'}}>Or sign in with</Text>
+      {/* <Text style={{color: '#4B4B4B'}}>Or sign in with</Text> */}
       {/* <View style={styles.signInButton}>
         <View style={styles.signInButtonView}>
           <TouchableOpacity style={styles.signInButtonStyle}><Image style={{width: '20%'}} source={require('../assets/images/facebook.png')}/><Text style={{color:'#000', marginLeft: '7%'}}>Facebook</Text></TouchableOpacity>
@@ -61,7 +61,7 @@ export default function SignInSA() {
         <Text>Don't have an account?</Text>
         <Text 
           // onPress={()=> someAction()}
-          // onPress={()=> navigation.navigate("Onboarding")}
+          onPress={()=> navigation.navigate("SignUp")}
           style={{color:'#EC5D70', marginLeft: '4%'}}>Sign Up</Text>
       </View>
     </View>
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     // flex:1,
     // height: '100%',
     // backgroundColor:'pink',
+    backgroundColor:'#fff',
     alignItems:'center',
     justifyContent: 'space-between',
     paddingVertical: '25%',
@@ -115,7 +116,6 @@ const styles = StyleSheet.create({
     // alignItems:'center',
     justifyContent:'center',
     width: '70%',
-    // height: ,
     // paddingVertical: '1%'
   },
   onboardbuttonStyle:{
@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
     paddingVertical: '2.5%',
     paddingHorizontal: '2%',
     width: '70%',
+    // height: '9%',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,

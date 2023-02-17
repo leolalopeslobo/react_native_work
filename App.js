@@ -1,84 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View, SafeAreaView } from 'react-native';
-// import Bar from './components/bar';
-// import Onboarding from './components/onboarding';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import OnboardingMainScreen from './components/onboardingMainScreen';
 import SignIn from './components/signIn';
 import SignUp from './components/signUp';
 import SignInSA from './components/signInSA';
 
-const {height, width} = Dimensions.get('window');
-
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
-    // <View style={styles.container}>
-            // {/* <StatusBar 
-            //   backgroundColor='transparent'
-            //   barStyle='light-content'
-            //   hidden={false}
-            //   translucent={true} //arranges the components below the status bar when set to 'true'
-            //   /> */}
-
-            <SignIn />
-            // <SignUp />
-            // <SignInSA />
-              
-
-      
-    // </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="OnboardingMainScreen">
+        <Stack.Screen name="OnboardingMainScreen" component={OnboardingMainScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
+        <Stack.Screen name="SignInSA" component={SignInSA} options={{headerShown: false}}/>
+        <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-
-  content: {
-    flex:1,
-    // backgroundColor:'pink',
-    backgroundColor:'#fff',
-    width: width,
-    height: height - (height/13 + height/13),
-    alignItems:'center',
-    justifyContent:'center'
-
-  },
-
-  box: {
-    backgroundColor:'red',
-    width: width/4,
-    height: height/12,
-  },
-
-  footer: {
-  },
-
-  sliderContent:{
-    flex: 0.85,
-    // backgroundColor:'grey',
-    width: '100%'
-  },
-
-  onboardButton: {
-    flex:0.15,
-    // flex: 0.5,
-    // backgroundColor:'pink',
-    alignItems:'center',
-    // justifyContent:'center',
-    width: '100%',
-    // height: 10,
-    // paddingVertical: '15%'
-  },
-  onboardbuttonStyle:{
-    width: '65%',
-    height: '45%',
-    backgroundColor: '#E94057',
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius: 17,
-    fontWeight: '500',
-  }
-});
